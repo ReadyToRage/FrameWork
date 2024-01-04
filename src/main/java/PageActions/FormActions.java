@@ -15,12 +15,13 @@ public class FormActions extends ReUsableFrameWork{
 	public static void ExecuteFormActions() {		
 		try {
 			ScrollToBottom();
-			ClickButton(formobj.Forms);			
+		driver.getTitle();
+			
+			ClickButton(formobj.Fore);
+			
 		} catch (Exception e) {
 			System.out.println(e);
-		}
-		
-		
+		}		
 	}
 
 }

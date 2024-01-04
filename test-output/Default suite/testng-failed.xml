@@ -5,9 +5,9 @@
     <classes>
       <class name="RunnerPackage.TestRunner">
         <methods>
+          <include name="LaunchDriver"/>
           <include name="QuitApp"/>
           <include name="launchApp"/>
-          <include name="Test2"/>
         </methods>
       </class> <!-- RunnerPackage.TestRunner -->
     </classes>

@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test thread-count="5" name="Test">
-    <classes>
-      <class name="RunnerPackage.TestRunner"/>
-    </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+<suite name="Suite" verbose="2" parallel="methods"
+	thread-count="2">
+	<listeners>
+	<listener class-name="RunnerPackage.Transformer"></listener>
+	</listeners>
+	<parameter name="title" value="DEMOQA"></parameter>
+	<test name="Test">
+		<classes>
+			<class name="RunnerPackage.TestRunner"></class>
+			<class name="RunnerPackage.Paralleltest"></class>
+		</classes>
+	</test>
+</suite> 
