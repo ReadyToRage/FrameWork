@@ -18,7 +18,7 @@ import org.testng.asserts.SoftAssert;
 
 import PageActions.FormActions;
 import QAUtilities.DataDriven;
-@Listeners
+@Listeners(Transformer.class)
 public class TestRunner extends QAUtilities.ReUsableFrameWork{	
 	
 	static FileInputStream readprop;
@@ -60,12 +60,17 @@ public class TestRunner extends QAUtilities.ReUsableFrameWork{
 			singleThreaded = true,
 			threadPoolSize = 5,
 			retryAnalyzer = Listener.class)
-	@Parameters("title")
-	public void LaunchDriver(String titletext){	
+	
+	public void LaunchDriver(){	
 		FormActions.ExecuteFormActions();	
-		assertEquals(driver.getTitle(),titletext);
-		System.out.println(titletext);
+		assertEquals(driver.getTitle(),"DEMOQA");
+		
 	}
+//	@Parameters("title")
+//	public void LaunchDriverr(String titletext) {
+//		assertEquals(driver.getTitle(),titletext);
+	//System.out.println(titletext);
+//	}
 		
 	@Test(description = "Test",
 			invocationCount = 3,
